@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: aquamarine;
+}
+
+#heading{
+    color: black;
+    text-align: center;
+    font-size: 50px;
+}
+
+#contact-list{
+    display: flex;
+    flex-direction: column;
+    margin-left: 27%;
+
+}
+#listItem{
+    width: 50%;
+    background-color: grey;
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+#itemContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#itemContent:hover{
+    background-color: brown;
+    opacity: 0.8;
+}

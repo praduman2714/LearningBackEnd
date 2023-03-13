@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
     <title><%= title %></title>
 </head>
 <body>
-    <h1>Rendered from Ejs</h1>
+    <!-- <h1>Rendered from Ejs</h1> -->
+    <h1 id="heading">
+        Contact List
+    </h1>
+
+    <div id="contact-list">
+        <ul>
+            <%for(let i of contact_list){ %>
+                <div id="listItem">
+                    <div id="itemContent">
+                        <p><%= i.name%></p>
+                        <p><%= i.phoneNumber%></p>
+                    </div>
+                </div>
+                <div id="deleteButton">
+                    <a href="/delete-contact/?id=<%= i._id%>">
+                        <button>Delete</button>
+                    </a>
+                </div>
+            <%}%>    
+        </ul>
+    </div>
+
+    <form action="/add-contact" method="post">
+        <input name="name" type="text" placeholder="Enter the Name" required>
+        <hr>
+        <input name="phoneNumber" type="text" placeholder="Phone Number" required>
+        <hr>
+        <button type="submit"> Add to Contact</submit> 
+    </form>
+
+    <script src="/js/home.js"></script>
 </body>
 </html>
